@@ -6,7 +6,10 @@
     "strict": true,
     "resolveJsonModule": true,
     "esModuleInterop": true,
-    "skipLibCheck": false
+    "skipLibCheck": false,
+    "paths": {
+      "@/*": ["./lib/*"]
+    }
   },
   "exclude": ["dist", "node_modules"]
 }

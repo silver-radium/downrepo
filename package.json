@@ -9,6 +9,7 @@
     "url": "https://github.com/vgseven/downrepo.git",
     "directory": "downrepo"
   },
+  "homepage": "https://github.com/vgseven/downrepo",
   "keywords": [
     "github",
     "git",
@@ -62,7 +63,6 @@
     "typescript": "^5.0.0"
   },
   "dependencies": {
-    "@clack/prompts": "^0.7.0",
     "@octokit/plugin-rest-endpoint-methods": "^13.2.1",
     "axios": "^1.7.2",
     "fs-extra": "^11.2.0",

@@ -1,82 +1,35 @@
 #!/usr/bin/env node
 
-import * as terminal from "@clack/prompts";
-import color from "picocolors";
+import { downrepo } from "@/download-repo";
+import * as color from "picocolors";
 import { setTimeout } from "timers/promises";
-import { downrepo } from "./lib/download-repo";
 
-const s = terminal.spinner();
+async function main() {
+  const gitPath = process.argv[2];
+  const dirname = process.argv[3];
 
-async function createRadium() {
-  console.clear();
+  const owner = gitPath.split(".com/")[1].split("/")[0];
+  const repo = gitPath.split(`${owner}/`)[1].split("/")[0];
+  const subPath = gitPath.split(`${repo}/`)[1];
 
-  terminal.intro(
-    `${color.bgCyan(color.black(" Download any GitHub Repository, Sub-Directory and Specific File. "))}`,
-  );
+  console.log(`Downloading ${color.cyan(gitPath)} to ${color.cyan(dirname)}`);
+  await setTimeout(1000);
+  await downrepo(owner, repo, subPath, dirname);
+  console.log(`Downloaded successfully...`);
 
-  const project = await terminal.group(
-    {
-      name: () =>
-        terminal.text({
-          message: "What is the name of the repository or sub-directory?",
-          placeholder: "radium",
-          validate: (value) => {
-            if (value.length === 0) return "Repository name is required!";
-          },
-        }),
-      owner: () =>
-        terminal.text({
-          message: "What is the name of the owner of repository?",
-          placeholder: "vgseven",
-          validate: (value) => {
-            if (value.length === 0) return "Owner name is required!";
-          },
-        }),
-      repo: () =>
-        terminal.text({
-          message: "What is the name of the repository?",
-          placeholder: "radium",
-          validate: (value) => {
-            if (value.length === 0) return "Repository name is required!";
-          },
-        }),
-      subPath: () =>
-        terminal.text({
-          message: "What is the name of the sub-directory?",
-          placeholder: "vgseven",
-          validate: (value) => {
-            if (value.length === 0) return "Sub-directory name is required!";
-          },
-        }),
-    },
-    {
-      onCancel: () => {
-        terminal.cancel("Operation cancelled.");
-        process.exit(0);
-      },
-    },
-  );
-
-  try {
-    s.start("Downloading...");
-
-    await downrepo(project.owner, project.repo, project.subPath, project.name);
-    await setTimeout(1000);
-
-    s.stop(`${project.name} Repository downloaded successfully.`);
-  } catch (error) {
-    terminal.note(`Error: ${error}`, "Download failed.");
-    process.exit(1);
-  }
-
-  terminal.outro(
+  console.log(
     `Problems? ${color.underline(color.cyan("https://github.com/vgseven/downrepo/issues"))}`,
   );
-
-  process.exit(0);
 }
 
-createRadium().catch((err) => {
-  console.error("Unhandled Error:", err);
-  process.exit(1);
-});
+main()
+  .then(() => {
+    process.exit(0);
+  })
+  .catch((err) => {
+    console.log(
+      `${color.red("Error while downloading repo, Provide path and folder name like https://github.com/silver-radium/templates/next/general general - so downrepo will downlaod the general sub-dir..")}`,
+      err,
+    );
+    process.exit(1);
+  });
