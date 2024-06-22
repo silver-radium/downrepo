@@ -3,7 +3,7 @@
   "changelog": [
     "@changesets/changelog-github",
     {
-      "repo": "vgseven/downrepo"
+      "repo": "silver-radium/downrepo"
     }
   ],
   "commit": false,
