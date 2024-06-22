@@ -1,5 +1,11 @@
 # downrepo
 
+## 1.0.1
+
+### Patch Changes
+
+- [`e558093`](https://github.com/silver-radium/downrepo/commit/e558093fc8d2550358ba4768ab8753ec5bbb815b) Thanks [@vgseven](https://github.com/vgseven)! - fix: package renamed and moved to npm org
+
 ## 1.0.0
 
 ### Major Changes

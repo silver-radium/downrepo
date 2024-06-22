@@ -1,7 +1,7 @@
 {
   "name": "@silver-radium/downrepo",
   "private": false,
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Download any GitHub Repo or Sub-Directory.",
   "license": "MIT",
   "author": "VGSEVEN <contact@vgseven.com>",
