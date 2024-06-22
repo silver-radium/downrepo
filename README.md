@@ -5,7 +5,19 @@
 ## Installation
 
 ```sh
-bun install -g downrepo
+bun install -g @silver-radium/downrepo
+```
+
+```sh
+pnpm install -g @silver-radium/downrepo
+```
+
+```sh
+npm install -g @silver-radium/downrepo
+```
+
+```sh
+yarn install -g @silver-radium/downrepo
 ```
 
 ## Usage

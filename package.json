@@ -1,5 +1,6 @@
 {
-  "name": "@radium/downrepo",
+  "name": "@silver-radium/downrepo",
+  "private": false,
   "version": "1.0.0",
   "description": "Download any GitHub Repo or Sub-Directory.",
   "license": "MIT",
