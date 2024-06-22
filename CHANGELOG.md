@@ -1,5 +1,11 @@
 # downrepo
 
+## 1.0.0
+
+### Major Changes
+
+- [`8fbe950`](https://github.com/silver-radium/downrepo/commit/8fbe950fdf45b4f10be263bdf44ebfd3a3e33226) Thanks [@vgseven](https://github.com/vgseven)! - core: issues resolved and ready to ship
+
 ## 0.1.1
 
 ### Patch Changes
