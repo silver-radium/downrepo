@@ -1,6 +1,6 @@
 {
   "name": "downrepo",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Download any GitHub Repo or Sub-Directory.",
   "license": "MIT",
   "author": "VGSEVEN <contact@vgseven.com>",
