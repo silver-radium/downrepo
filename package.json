@@ -1,19 +1,20 @@
 {
   "name": "downrepo",
-  "version": "0.1.1",
-  "description": "Download any GitHub Repo - Sub-directory - any specific file",
+  "version": "0.1.0",
+  "description": "Download any GitHub Repo or Sub-Directory.",
   "license": "MIT",
   "author": "VGSEVEN <contact@vgseven.com>",
   "repository": {
     "type": "git",
-    "url": "https://github.com/vgseven/downrepo.git",
+    "url": "https://github.com/silver-radium/downrepo.git",
     "directory": "downrepo"
   },
-  "homepage": "https://github.com/vgseven/downrepo",
+  "homepage": "https://github.com/silver-radium/downrepo",
   "keywords": [
     "github",
     "git",
-    "repository"
+    "repository",
+    "sub-directory"
   ],
   "module": "index.ts",
   "type": "module",
@@ -45,12 +46,12 @@
     "@changesets/cli": "^2.27.5",
     "@eslint/eslintrc": "^3.1.0",
     "@eslint/js": "^9.5.0",
-    "@types/bun": "^1.1.4",
+    "@types/bun": "^1.1.5",
     "@types/eslint": "^8.56.10",
     "@types/eslint__eslintrc": "^2.1.1",
     "@types/eslint__js": "^8.42.3",
     "@types/fs-extra": "^11.0.4",
-    "@types/node": "^20.14.5",
+    "@types/node": "^20.14.8",
     "@typescript-eslint/eslint-plugin": "^7.13.1",
     "@typescript-eslint/parser": "^7.13.1",
     "eslint": "^9.5.0",
@@ -60,7 +61,7 @@
     "prettier-plugin-organize-imports": "^3.2.4"
   },
   "peerDependencies": {
-    "typescript": "^5.0.0"
+    "typescript": "^5.5.0"
   },
   "dependencies": {
     "@octokit/plugin-rest-endpoint-methods": "^13.2.1",

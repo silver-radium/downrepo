@@ -19,31 +19,23 @@ async function downloadDirectory(
   dirPath: string,
   localDir: string,
 ) {
-  try {
-    const { data } = await octokit.rest.repos.getContent({
-      owner,
-      repo,
-      path: dirPath,
-    });
+  const { data } = await octokit.rest.repos.getContent({
+    owner,
+    repo,
+    path: dirPath,
+  });
 
-    if (Array.isArray(data)) {
-      await fs.ensureDir(localDir);
+  if (Array.isArray(data)) {
+    await fs.ensureDir(localDir);
 
-      for (const item of data) {
-        const itemPath = path.join(localDir, item.name);
-        if (item.type === "file" && item.download_url) {
-          await downloadFile(item.download_url, itemPath);
-        } else if (item.type === "dir") {
-          await downloadDirectory(owner, repo, item.path, itemPath);
-        } else {
-          console.log(`Skipping unsupported item type: ${item.type}`);
-        }
+    for (const item of data) {
+      const itemPath = path.join(localDir, item.name);
+      if (item.type === "file" && item.download_url) {
+        await downloadFile(item.download_url, itemPath);
+      } else if (item.type === "dir") {
+        await downloadDirectory(owner, repo, item.path, itemPath);
       }
-    } else {
-      console.error("Error: Expected an array of directory contents.");
     }
-  } catch (error) {
-    console.error(`Error downloading directory ${dirPath}:`, error);
   }
 }
 
