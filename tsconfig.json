@@ -1,15 +1,15 @@
 {
-  "compilerOptions": {
-    "target": "ESNext",
-    "module": "ESNext",
-    "moduleResolution": "node",
-    "strict": true,
-    "resolveJsonModule": true,
-    "esModuleInterop": true,
-    "skipLibCheck": false,
-    "paths": {
-      "@/*": ["./lib/*"]
-    }
-  },
-  "exclude": ["dist", "node_modules"]
+	"compilerOptions": {
+		"target": "ESNext",
+		"module": "ESNext",
+		"moduleResolution": "node",
+		"strict": true,
+		"resolveJsonModule": true,
+		"esModuleInterop": true,
+		"skipLibCheck": false,
+		"paths": {
+			"@/*": ["./lib/*"]
+		}
+	},
+	"exclude": ["dist", "node_modules"]
 }
