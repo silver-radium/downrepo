@@ -1,5 +1,11 @@
 # downrepo
 
+## 1.1.0
+
+### Minor Changes
+
+- [`718f067`](https://github.com/silver-radium/downrepo/commit/718f06710f45a9c644e3e48022de8eeaae74fa01) Thanks [@vgseven](https://github.com/vgseven)! - core: migrated to biomejs from prettier and eslint
+
 ## 1.0.1
 
 ### Patch Changes
