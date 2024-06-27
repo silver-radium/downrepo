@@ -10,41 +10,33 @@
 		"url": "https://github.com/silver-radium/downrepo.git"
 	},
 	"homepage": "https://github.com/silver-radium/downrepo",
-	"keywords": [
-		"github",
-		"git",
-		"repository",
-		"sub-directory"
-	],
+	"keywords": ["github", "git", "repository", "sub-directory"],
 	"module": "index.ts",
 	"type": "module",
 	"exports": "./dist/index.js",
 	"bin": {
 		"downrepo": "./dist/index.js"
 	},
-	"files": [
-		"dist",
-		"README.md",
-		"package.json"
-	],
+	"files": ["dist", "README.md", "package.json"],
 	"engines": {
 		"bun": ">=1.1"
 	},
 	"scripts": {
 		"build": "bun build index.ts --outdir ./dist --target node --format esm",
-		"finetune": "biome format . --write && biome lint . --write",
+		"format": "biome format . --write",
+		"lint": "biome lint . --write",
 		"release": "changeset publish --tag latest",
 		"prepare": "husky",
 		"dev:update": "git pull origin main && bun i",
-		"build:prepare": "bun run finetune && bun run build"
+		"build:prepare": "bun run format && bun run lint && bun run build"
 	},
 	"devDependencies": {
 		"@biomejs/biome": "1.8.2",
 		"@changesets/changelog-github": "^0.5.0",
-		"@changesets/cli": "^2.27.5",
-		"@types/bun": "^1.1.5",
+		"@changesets/cli": "^2.27.6",
+		"@types/bun": "^1.1.6",
 		"@types/fs-extra": "^11.0.4",
-		"@types/node": "^20.14.8",
+		"@types/node": "^20.14.9",
 		"husky": "^9.0.11",
 		"typescript": "^5.5.2"
 	},

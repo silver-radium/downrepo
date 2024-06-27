@@ -1,20 +1,19 @@
 #!/usr/bin/env node
 
-import { downrepo } from "@/download-repo";
+import { downloadDirectory } from "@/download-repo";
 import * as color from "picocolors";
 import { setTimeout } from "node:timers/promises";
+import { repoInfo } from "@/repo-info";
 
 async function main() {
 	const gitPath = process.argv[2];
 	const dirname = process.argv[3];
 
-	const owner = gitPath.split(".com/")[1].split("/")[0];
-	const repo = gitPath.split(`${owner}/`)[1].split("/")[0];
-	const subPath = gitPath.split(`${repo}/`)[1];
+	const { owner, repo, subDir } = repoInfo(gitPath);
 
 	try {
 		await setTimeout(1000);
-		await downrepo(owner, repo, subPath, dirname);
+		await downloadDirectory(owner, repo, subDir, dirname);
 		console.log("Downloaded successfully...");
 		console.log(`Problems? ${color.underline(color.cyan("https://github.com/silver-radium/downrepo/issues"))}`);
 	} catch (error) {

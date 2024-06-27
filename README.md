@@ -1,6 +1,6 @@
 # DOWNREPO
 
-##### `downrepo` or `dr` is an simple CLI tool to download any github sub-dir - just because `git clone` doesn't allow us to download any specific sub-directory.
+##### `downrepo` is an simple CLI tool to download any github repo but specifically designed for downloading sub-directories just because `git clone` doesn't allow us to download sub-directories..
 
 ## Installation
 
@@ -23,7 +23,7 @@ yarn install -g @silver-radium/downrepo
 ## Usage
 
 ```sh
-$ downrepo https://github.com/silver-radium/templates/next/general general
+$ downrepo https://github.com/silver-radium/templates/tree/main/next/next-general general
 ```
 
 ## Explanation
@@ -31,7 +31,7 @@ $ downrepo https://github.com/silver-radium/templates/next/general general
 `downrepo` accepts two arguments:
 
 1. The URL of the repository to download
-2. The path to the sub-directory to download
+2. The folder name to download the repository to
 
 ## Issues
 

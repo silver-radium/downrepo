@@ -3,7 +3,7 @@ import { paginateRest } from "@octokit/plugin-paginate-rest";
 import { restEndpointMethods } from "@octokit/plugin-rest-endpoint-methods";
 import axios from "axios";
 import * as fs from "fs-extra";
-import * as path from "node:path";
+import path from "node:path";
 
 const MyOctokit = Octokit.plugin(paginateRest, restEndpointMethods);
 const octokit = new MyOctokit();
@@ -13,7 +13,7 @@ async function downloadFile(url: string, filePath: string) {
 	await fs.outputFile(filePath, response.data);
 }
 
-async function downloadDirectory(owner: string, repo: string, dirPath: string, localDir: string) {
+export async function downloadDirectory(owner: string, repo: string, dirPath: string, localDir: string) {
 	const { data } = await octokit.rest.repos.getContent({
 		owner,
 		repo,
@@ -32,10 +32,4 @@ async function downloadDirectory(owner: string, repo: string, dirPath: string, l
 			}
 		}
 	}
-}
-
-export async function downrepo(owner: string, repo: string, subPath: string, dirPath: string) {
-	const localDir = path.resolve(process.cwd(), dirPath);
-
-	await downloadDirectory(owner, repo, subPath, localDir);
 }
