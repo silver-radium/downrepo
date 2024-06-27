@@ -1,5 +1,11 @@
 # downrepo
 
+## 1.1.1
+
+### Patch Changes
+
+- [`f2dc32a`](https://github.com/silver-radium/downrepo/commit/f2dc32ac95eb1147971a0003b17ae97fc0cb68de) Thanks [@vgseven](https://github.com/vgseven)! - fix: repo slice added and few updates
+
 ## 1.1.0
 
 ### Minor Changes
